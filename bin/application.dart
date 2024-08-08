@@ -1,5 +1,10 @@
-import 'package:application/application.dart' as application;
+import '../model/course.dart';
+import '../json/data.dart';
 
 void main(List<String> arguments) {
-  print('Hello world: ${application.calculate()}!');
+  List<Course> university = [];
+  for (var element in data['courses']) {
+    university.add(Course.formJson(element));
+  }
+
 }
