@@ -1,10 +1,16 @@
-import 'dart:async';
-
 import 'data.dart';
 
 void main(List<String> arguments) {
   University u = University.fromJson(data);
 
+  // print(u.toJson());
+  // u.searchForCourse('Introduction to Programming');
+  u.addNewCourse(courseName: 'courseName', courseCode: 'courseCode', schedule: ['schedule','jkbsajbbd']);
+  print(u.toJson());
+
+  print('');
+
+  u.removeCourseByCode('CS101');
   print(u.toJson());
 }
 
@@ -31,23 +37,24 @@ class University {
       required String courseCode,
       required List schedule,
       Map<String, dynamic>? json}) {
-    return University(
-        courses: (json?['courses'] as List)
-            .map((element) => Course.fromJson(element))
-            .toList());
+    courses.add(Course(courseName: courseName, courseCode: courseCode, schedule: schedule));
   }
 
-    removeCourseByCode(Map<String, dynamic> json, String courseCode) {
+    removeCourseByCode(String courseCode) {
       for (var element in courses) {
       if (element.courseCode == courseCode) {
         courses.remove(element);
+        break;
       }
     }
     }
 
 
   displayCourses() {
-    print(toJson());
+    for (var element in courses) {
+      print(element);
+      
+    }
   }
 
   searchForCourse(String courseName) {
