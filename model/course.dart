@@ -1,4 +1,3 @@
-import 'dart:async';
 
 class Course {
   final String name;
