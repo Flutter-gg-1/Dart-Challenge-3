@@ -1,3 +1,4 @@
+import 'dart:async';
 
 class Course {
   final String name;
@@ -11,5 +12,11 @@ class Course {
         name: json['courseName'],
         code: json['courseCode'],
         schedule: json['schedule']);
+  }
+
+  void toPrint() {
+    print("Course name:$name");
+    print("Course code:$code");
+    print("Course schedule:$schedule");
   }
 }
