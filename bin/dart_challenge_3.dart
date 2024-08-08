@@ -12,6 +12,7 @@ void main(List<String> arguments) {
 
   University university = University.fromJson(jsonMap);
 
+  print(university.toJson());
   university.addCourse(Course(
     courseName: "AI",
     courseCode: "CS401",
@@ -21,7 +22,7 @@ void main(List<String> arguments) {
   university.removeCourseByCode("CS101");
 
   List<Course> allCourses = university.listAllCourses();
-  List<Course> searchedCourses = university.searchCourses("CS");
+  List<Course> searchedCourses = university.searchCourses("AI");
 
   print("All Courses:");
   allCourses.forEach((course) {
@@ -32,6 +33,6 @@ void main(List<String> arguments) {
   searchedCourses.forEach((course) {
     print("${course.courseName} (${course.courseCode}): ${course.schedule}");
   });
-  
+
   // university.toString();
 }
