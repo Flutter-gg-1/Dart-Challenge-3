@@ -16,11 +16,11 @@ import 'dart:convert';
     courseCode: "CS302",
     schedule: ["Monday 3:00 PM - 5:00 PM", "Wednesday 3:00 PM - 5:00 PM"],
   ));
-  //university.listCourses();
+  university.listAllCourses();
 
  
- //university.removeCourse("CS101");
-   // university.listAllCourses();
+ university.removeCourse("CS101");
+    university.listAllCourses();
 
 
   
